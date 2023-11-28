@@ -11,6 +11,11 @@ public class Aluno {
         return hoje.getYear() - nascimento.getYear();
     }
 
+    public boolean alunoEstaApto(Turma turma) {
+        int idade = this.getIdade();
+        return idade <= 6 || idade >= 18 && !turma.getAlunos().contains(this);
+    }
+
     public Aluno criarAluno(String nome, LocalDate nascimento) {
         Aluno aluno = new Aluno();
         aluno.setNome(nome);
@@ -20,6 +25,10 @@ public class Aluno {
             throw new RuntimeException("Aluno menor de idade");
         }
         return aluno;
+    }
+
+    public boolean alunoEstaMatriculado(Turma turma) {
+        return turma.getAlunos().contains(this);
     }
 
     public String getNome() {
