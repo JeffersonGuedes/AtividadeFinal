@@ -18,7 +18,9 @@ public class Turma {
         if (this.alunos.size() >= quantidadeMaximaAlunos) {
             throw new RuntimeException("Turma lotada");
         }
-        this.alunos.add(aluno);
+        if (aluno.alunoEstaApto(this)){
+            this.alunos.add(aluno);
+        }
         return this;
     }
 
