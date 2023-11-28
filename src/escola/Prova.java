@@ -1,5 +1,7 @@
 package escola;
 
+import java.util.List;
+
 public class Prova {
   private Disciplina disciplina;
 
@@ -25,4 +27,20 @@ public class Prova {
       System.out.println("Nenhuma disciplina associada a esta prova.");
     }
   }
+
+  public void calcularMediaTurma(List<Nota> notas) {
+  if (notas.isEmpty()) {
+    System.out.println("Não há notas disponíveis para calcular a média da turma.");
+    return;
+  }
+
+  double soma = 0;
+  for (Nota nota : notas) {
+    soma += nota.getValor();
+  }
+
+  double media = soma / notas.size();
+  System.out.println("Média da turma na disciplina " + disciplina.getNome() + ": " + media);
+}
+
 }
