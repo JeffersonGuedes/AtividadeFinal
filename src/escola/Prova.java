@@ -25,4 +25,13 @@ public class Prova {
         + prova.getDisciplina().getNome() + ": " + valor);
     return this;
   }
+  
+  public void imprimirInformacoes() {
+    if (disciplina != null) {
+      System.out.println("Informações da Prova:");
+      System.out.println("Disciplina: " + disciplina.getNome());
+    } else {
+      System.out.println("Nenhuma disciplina associada a esta prova.");
+    }
+  }
 }
