@@ -17,15 +17,6 @@ public class Prova {
     return prova;
   }
 
-  public Nota atribuirNota(Prova prova, Aluno aluno, double valor) {
-    this.prova = prova;
-    this.aluno = aluno;
-    this.valor = valor;
-    System.out.println("Nota atribuída para o aluno " + aluno.getNome() + " na disciplina "
-        + prova.getDisciplina().getNome() + ": " + valor);
-    return this;
-  }
-  
   public void imprimirInformacoes() {
     if (disciplina != null) {
       System.out.println("Informações da Prova:");
