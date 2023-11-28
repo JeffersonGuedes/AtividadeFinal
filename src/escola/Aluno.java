@@ -13,7 +13,7 @@ public class Aluno {
 
     public boolean alunoEstaApto(Turma turma) {
         int idade = this.getIdade();
-        return idade <= 6 || idade >= 18;
+        return idade <= 6 || idade >= 18 && !turma.getAlunos().contains(this);
     }
 
     public Aluno criarAluno(String nome, LocalDate nascimento) {
